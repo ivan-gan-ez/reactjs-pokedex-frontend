@@ -16,17 +16,25 @@ function App() {
   /* INSTRUCTION: Use the useEffect hook to fetch pokemons */
 
   useEffect(() => {
-    getPokemons(search, type).then((data) => {
-      setPokemons(data);
-    });
+    getPokemons(search, type)
+      .then((data) => {
+        setPokemons(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [search, type]);
 
   /* INSTRUCTION: Use the useEffect hook to fetch types */
 
   useEffect(() => {
-    getTypes().then((data) => {
-      setTypes(data);
-    });
+    getTypes()
+      .then((data) => {
+        setTypes(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   /* INSTRUCTION: Create functions to handle search change */
